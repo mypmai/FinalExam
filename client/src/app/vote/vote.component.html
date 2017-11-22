@@ -1,0 +1,35 @@
+<h1>Vote</h1>
+
+<div *ngFor='let option of onePoll'>
+	<h3>{{option.question}}</h3>
+</div>
+
+<table>
+	<tr>
+		<th>Option</th>
+		<th>Current Count of Votes</th>
+		<th>Action</th>
+	</tr>
+
+	<tr *ngFor='let option of onePoll'>
+		<td>{{option.option1}}</td>
+		<td>{{count1}}</td>
+		<td><button (click)='vote1()'>Vote</button></td>
+	</tr>
+	<tr *ngFor='let option of onePoll'>
+		<td>{{option.option2}}</td>
+		<td>{{count2}}</td>
+		<td><button (click)='vote2()'>Vote</button></td>
+	</tr>
+	<tr *ngFor='let option of onePoll'>
+		<td>{{option.option3}}</td>
+		<td>{{count3}}</td>
+		<td><button (click)='vote3()'>Vote</button></td>
+	</tr>
+	<tr *ngFor='let option of onePoll'>
+		<td>{{option.option4}}</td>
+		<td>{{count4}}</td>
+		<td><button (click)='vote4()'>Vote</button></td>
+	</tr>
+
+</table>

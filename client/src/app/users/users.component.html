@@ -1,0 +1,14 @@
+<h1>LogIn/Register</h1>
+
+<form (submit)="login();registerForm.resetForm()" #registerForm="ngForm" >
+
+    Name: <input type="text" name="name" 
+        [(ngModel)]="new_user.name" 
+        required 
+        minlength="2" 
+        #name="ngModel"/>
+
+        <span *ngIf="!name.valid && name.dirty">Name is required!!!</span>
+
+    <input type="submit"  value="Register/LogIn" [disabled]="!registerForm.valid">
+  </form>

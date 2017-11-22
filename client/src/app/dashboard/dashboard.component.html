@@ -1,0 +1,34 @@
+<h1>Welcome {{curUserName}}</h1>
+
+<div>
+Search: <input type="text" name="search" class="validate" [(ngModel)]="search">
+</div>
+
+<div *ngFor="let user of allUser|filter:search">
+	<p>Name: {{user.name}}</p>
+	<p *ngFor='let poll of user.polls'><a [routerLink]="['/vote',poll._id]">{{poll.question}}</a> Date Posted: {{poll.createdAt|date:'mediumDate'}} <span *ngIf='userid==poll._user'><button (click)='delete(poll._id)'> Delete</button></span></p>
+	<hr>
+</div>
+
+
+<!-- {{allUser|json}} -->
+
+<!-- <table >
+	<tr>
+		<th>Name</th>
+		<th>Survey Question</th>
+		<th>Date Posted</th>
+		<th>Action</th>
+	</tr>
+	
+	<tr *ngFor='let poll of polls'>
+		<td></td>
+		<td><a [routerLink]="['/vote',poll._id]"> {{poll.question}}</a></td>
+		<td>{{poll.createdAt}}</td>
+		<td *ngIf='poll._user===userid'> <button (click)='delete(poll._id)'> Delete</button></td>
+		<td *ngIf='poll._user!==userid'> No Access</td>
+
+	</tr>
+</table>
+ -->
+<!-- {{allUser|json}} -->
